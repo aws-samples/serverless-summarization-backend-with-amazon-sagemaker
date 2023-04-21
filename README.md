@@ -4,6 +4,10 @@ This repository contains a solution for an automated meeting notes generator app
 
 Explore more foundation models on [SageMaker JumpStart](https://aws.amazon.com/sagemaker/jumpstart/getting-started/). 
 
+## Disclaimer
+
+The IAM roles and policies provided in the CloudFormation template are created to demonstrate the functionality of the demo solution. Apply the principles of least privilege to secure resources and their permissions for deploying into a production environment. Learn more about [Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+
 ## Key Features
 - Uses CloudFormation to automate deployment of all resources
 - Uses Lambda functions with S3 upload triggers to create an automated workflow
