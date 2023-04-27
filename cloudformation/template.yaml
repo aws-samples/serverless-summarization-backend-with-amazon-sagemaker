@@ -467,7 +467,7 @@ Resources:
   SageMakerExecutionRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !Sub ${AWS::StackName}-SageMakerExecutionRole
+      RoleName: !Sub sagemaker-soln-mng-${AWS::StackName}-SageMakerExecutionRole
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -484,7 +484,7 @@ Resources:
   SageMakerModel:
     Type: AWS::SageMaker::Model
     Properties:
-      ModelName: !Sub ${AWS::StackName}-SageMakerModel
+      ModelName: !Sub sagemaker-soln-mng-${AWS::StackName}-SageMakerModel
       Containers:
         - Image: !Ref ImageURI
           ModelDataUrl: !Ref ModelData
@@ -505,7 +505,7 @@ Resources:
   SageMakerEndpointConfig:
     Type: AWS::SageMaker::EndpointConfig
     Properties:
-      EndpointConfigName: !Sub ${AWS::StackName}-SageMakerEndpointConfig
+      EndpointConfigName: !Sub sagemaker-soln-mng-${AWS::StackName}-SageMakerEndpointConfig
       ProductionVariants:
         - ModelName: !GetAtt SageMakerModel.ModelName
           VariantName: !Sub ${SageMakerModel.ModelName}-1
@@ -518,5 +518,5 @@ Resources:
   SageMakerEndpoint:
     Type: AWS::SageMaker::Endpoint
     Properties:
-      EndpointName: !Sub ${AWS::StackName}-SageMakerEndpoint
+      EndpointName: !Sub sagemaker-soln-mng-${AWS::StackName}-SageMakerEndpoint
       EndpointConfigName: !GetAtt SageMakerEndpointConfig.EndpointConfigName
