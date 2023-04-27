@@ -1,4 +1,4 @@
-# Serverless Summarization Backend with Amazon SageMaker
+# Serverless Summarization Backend with Amazon SageMaker JumpStart
 
 This repository contains a solution for an automated meeting notes generator application leveraging Large-Language Models (LLMs) on SageMaker JumpStart, a machine learning (ML) hub that can help you accelerate your ML journey. 
 
