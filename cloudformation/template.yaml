@@ -92,6 +92,19 @@ Resources:
     Type: 'AWS::S3::Bucket'
     Properties:
       AccessControl: LogDeliveryWrite
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: ObjectWriter
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: aws:kms
+              KMSMasterKeyID: alias/aws/s3
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
 
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
